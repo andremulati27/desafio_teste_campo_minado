@@ -7,7 +7,7 @@
 
 ## Especificação adotada
 
-Jogo em JavaScript, com tabuleiro de **14 linhas × 18 colunas** e **40 bombas**. As coordenadas são `linha, coluna`, iniciando em zero. A partida começa em `em_andamento`, termina em `perdeu` ao revelar uma bomba e em `venceu` quando todas as 212 casas seguras forem reveladas. Bandeiras não revelam casas nem contam como vitória. Uma casa segura mostra o número de bombas nas até oito posições vizinhas; casas de valor zero abrem recursivamente a região segura e sua borda numérica. Revelar uma casa já aberta ou com bandeira não altera o estado. Depois do fim, nenhuma jogada altera o tabuleiro.
+Jogo em JavaScript, com tabuleiro de **18 colunas × 14 linhas** e **40 bombas**. As coordenadas são `linha, coluna`, iniciando em zero. A partida começa em `em_andamento`, termina em `perdeu` ao revelar uma bomba e em `venceu` quando todas as 212 casas seguras forem reveladas. Bandeiras não revelam casas nem contam como vitória. Uma casa segura mostra o número de bombas nas até oito posições vizinhas; casas de valor zero abrem recursivamente a região segura e sua borda numérica. Revelar uma casa já aberta ou com bandeira não altera o estado. Depois do fim, nenhuma jogada altera o tabuleiro.
 
 Para permitir testes repetíveis, a implementação deve aceitar posições de bombas injetadas. Na partida comum, elas podem ser sorteadas. A especificação original não fixa garantia de primeira jogada segura; esta suíte **não exige** essa regra.
 
@@ -26,7 +26,7 @@ As funções podem usar estado imutável ou mutável; os testes usam sempre o re
 
 | ID | Cenário e resultado esperado |
 | --- | --- |
-| CM01 | Criação padrão: 14 × 18, exatamente 40 bombas e status inicial em andamento. |
+| CM01 | Criação padrão: 18 colunas × 14 linhas, exatamente 40 bombas e status inicial em andamento. |
 | CM02 | Posição repetida, fora dos limites ou quantidade incorreta de bombas: `RangeError`. |
 | CM03 | Vizinhança conta bomba nas oito direções e respeita bordas/cantos. |
 | CM04 | Revelar casa numerada mostra somente essa casa. |
